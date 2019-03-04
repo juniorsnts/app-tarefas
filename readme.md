@@ -4,4 +4,5 @@ o artigo de passo à passo encontra-se no medium: https://medium.com/@juniorsnts
 
 # Instalação
     npm install
+e depois: 
     ionic serve
