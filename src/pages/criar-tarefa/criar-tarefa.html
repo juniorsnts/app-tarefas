@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="cancelar()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Criar nova tarefa</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-label><strong>Nome da tarefa</strong></ion-label>
+  <ion-input placeholder="Limpar a casa" [(ngModel)]="nome_tarefa"></ion-input>
+  <ion-label><strong>Descrição da tarefa</strong></ion-label>
+  <ion-input placeholder="Limpar todos os quartos, camas, pia e etc..." [(ngModel)]="descricao_tarefa">
+  </ion-input>
+  <button class="botao-form" ion-button block outline color="primary"
+    [disabled]="nome_tarefa == '' || descricao_tarefa == ''" (click)="criarTarefa()">Adicionar</button>
+</ion-content>

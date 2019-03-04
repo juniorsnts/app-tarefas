@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title text-center>
       App de tarefas
     </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="abrirModal()">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
@@ -13,31 +13,12 @@
 
 <ion-content>
   <ion-list>
-    <ion-item-sliding>
-      <ion-item>
-        Minha tarefa
-      </ion-item>
-      <ion-item-options side="right">
-        <button ion-button color="primary">
-          <ion-icon name="create"></ion-icon>
-        </button>
-        <button ion-button color="danger">
-          <ion-icon name="trash"></ion-icon>
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-    <ion-item-sliding>
-      <ion-item>
-        Minha tarefa
-      </ion-item>
-      <ion-item-options side="right">
-        <button ion-button color="primary">
-          <ion-icon name="create"></ion-icon>
-        </button>
-        <button ion-button color="danger">
-          <ion-icon name="trash"></ion-icon>
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
+    <ion-item *ngFor="let tarefa of tarefas">
+      <span text-capitalize>{{tarefa.nome}}</span>
+      <p>{{tarefa.descricao}}</p>
+      <button (click)="deletar(tarefa)" item-end ion-button icon-only clear color="danger">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-item>
   </ion-list>
 </ion-content>
